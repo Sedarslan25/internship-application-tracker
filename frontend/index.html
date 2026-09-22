@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staj Takip Merkezi</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div><p class="eyebrow">KARİYER YÖNETİMİ</p><h1>Staj Takip Merkezi</h1><p>Başvurularını tek ekranda düzenle, takip et ve önceliklendir.</p></div>
+        <div class="summary" id="summary"></div>
+      </section>
+      <section class="workspace">
+        <form id="application-form">
+          <h2>Yeni başvuru</h2>
+          <label>Şirket<input required name="company" maxlength="80" placeholder="Örn. Teknoloji AŞ" /></label>
+          <label>Pozisyon<input required name="role" maxlength="100" placeholder="Örn. Backend Stajyeri" /></label>
+          <div class="split"><label>Durum<select name="status"><option>Kaydedildi</option><option>Başvuruldu</option><option>Görüşme</option><option>Teklif</option><option>Olumsuz</option></select></label><label>Tarih<input required name="application_date" type="date" /></label></div>
+          <label>Notlar<textarea name="notes" maxlength="300" placeholder="Kısa not ekle..."></textarea></label>
+          <button>Başvuruyu kaydet</button>
+        </form>
+        <section class="list"><div class="list-header"><div><p class="eyebrow">BAŞVURULAR</p><h2>Takip panosu</h2></div><select id="filter"><option value="">Tüm durumlar</option><option>Kaydedildi</option><option>Başvuruldu</option><option>Görüşme</option><option>Teklif</option><option>Olumsuz</option></select></div><div id="cards" class="cards"></div></section>
+      </section>
+    </main>
+    <template id="card-template"><article class="card"><div><span class="status"></span><h3></h3><p class="role"></p></div><button class="delete" title="Sil">×</button><p class="notes"></p><small class="date"></small></article></template>
+    <script src="/app.js"></script>
+  </body>
+</html>
